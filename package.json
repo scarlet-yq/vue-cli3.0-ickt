@@ -10,7 +10,11 @@
   "dependencies": {
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
-    "vue": "^2.5.13"
+    "lib-flexible": "^0.3.2",
+    "postcss-pxtorem": "^4.0.1",
+    "vant": "^1.6.12",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-alpha.8",
@@ -31,7 +35,13 @@
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": {}
+      "autoprefixer": {},
+      "postcss-pxtorem": {
+        "rootValue": 37.5,
+        "propList": [
+          "*"
+        ]
+      }
     }
   },
   "browserslist": [
