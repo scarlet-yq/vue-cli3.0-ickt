@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p>姓名：{{userInfo.name}}</p>
+    <p>年龄：{{userInfo.age}}</p>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,6 +14,16 @@ export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data() {
+    return {
+        userInfo: {}
+    }
+  },
+  created() {
+    this.$http.get('data.json').then(response => {
+        this.userInfo = response.data;
+    })
   }
 }
 </script>
